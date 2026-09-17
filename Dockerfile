@@ -17,7 +17,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
-COPY --from=build /src/build/unit_tests ./unit_tests
+COPY --from=build /src/build/tests/unit_tests ./unit_tests
 
 # TODO: switch the default command to the benchmark harness once it exists.
 CMD ["./unit_tests"]
